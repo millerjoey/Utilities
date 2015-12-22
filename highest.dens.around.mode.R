@@ -15,7 +15,7 @@ interval.around.mode1D <- function(density, p, mode=max(normalized_data)) {
 
   density <- density/sum(density)
   
-  while (sum < p) { # This starts at mode and walks left or right, depending on which has more mass
+  while (sum < p) { # This starts at mode and expands left or right, depending on which has more mass
     sum <- sum(density[(modeIndex-i):(modeIndex+k)])
     if (density[modeIndex-i] <= density[modeIndex+k]) {k <- k + 1}
     else {i <- i + 1} 
