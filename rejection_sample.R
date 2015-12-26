@@ -21,8 +21,8 @@ rejectionSample <- function(matrix, n, x=10) {
       vectorPar1[i] <- row
       vectorPar2[i] <- col
       i=i+1
-      # if ( (sum(count)/x)%%1==0 ) {print(sum(count))} # Uncomment this
-      # code to check progress.
+      # if ( (sum(count)/x)%%1==0 ) {print(sum(count))} # Uncomment line
+      # 24 to check progress.
     } 
   }
   return(cbind(vectorPar1, vectorPar2))
