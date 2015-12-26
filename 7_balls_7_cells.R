@@ -1,5 +1,5 @@
 ## To resolve an argument inspired by a question in Casella Berger
--------------------------------------------------------------------
+# -------------------------------------------------------------------
 # n balls are distributed uniformly into n cells.
 # This function simulates a RV, X_j, the number of cells
 # containing exactly i balls
