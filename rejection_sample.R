@@ -1,19 +1,29 @@
-# Rejection Sampling Function over a 
+# Rejection Sampling Function over a grid (class: matrix) of values
+# from a bivariate density. Creates data frame with n rows and cols 
+# ranAlpha and ranBeta which are indices of the grid sampled randomly 
+# from the density. Parameter 1 corresponds to the rows of the matrix.
+# x (default 10) prints out every multiple of x between 1 and n so you 
+# check progress. Uncomment code to activate.
 
-rejectionSample <- function(matrix, n) {
-  vector <- rep(NA, times = n)
+rejectionSample <- function(matrix, n, x=10) {
+
+  count <- rep(F, times = n)
   vectorPar1 <- rep(NA, times = n)
   vectorPar2 <- rep(NA, times = n)
-  
-    row <- sample(1:dim(matrix)[1], size = n)
-    col <- sample(1:dim(matrix)[2], size = n)
-    ran <- runif(n, min = 0, max = 1)
-    Max <- max(matrix)
-    matrix[row,col]/Max >= ran
-
-  ranAlpha <<- vectorPar1[!is.na(vectorPar1)]
-  ranBeta <<- vectorPar2[!is.na(vectorPar2)]
-  ranSample <- vector
-  ranSample <<- ranSample[!is.na(ranSample)]
-  print(length(ranSample))
+  Max <- max(matrix)
+  i=1
+  while ( sum(count) < n ) {
+    row <- sample(1:dim(matrix)[1], size = 1)
+    col <- sample(1:dim(matrix)[2], size = 1)
+    ran <- runif(1)
+    if ( matrix[row,col]/Max >= ran ) {
+      count[i] <- T
+      vectorPar1[i] <- row
+      vectorPar2[i] <- col
+      i=i+1
+      # if ( (sum(count)/x)%%1==0 ) {print(sum(count))} # Uncomment this
+      # code to check progress.
+    } 
+  }
+  return(cbind(vectorPar1, vectorPar2))
 }
