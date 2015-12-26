@@ -4,6 +4,7 @@
 # from the density. Parameter 1 corresponds to the rows of the matrix.
 # x (default 10) prints out every multiple of x between 1 and n so you 
 # check progress. Uncomment code to activate.
+# --------------------------------------------------------------------
 
 rejectionSample <- function(matrix, n, x=10) {
 
@@ -13,10 +14,10 @@ rejectionSample <- function(matrix, n, x=10) {
   Max <- max(matrix)
   i=1
   while ( sum(count) < n ) {
-    row <- sample(1:dim(matrix)[1], size = 1)
-    col <- sample(1:dim(matrix)[2], size = 1)
-    ran <- runif(1)
-    if ( matrix[row,col]/Max >= ran ) {
+    row <- sample(1:dim(matrix)[1], size = 1) # Sample an index from the rows
+    col <- sample(1:dim(matrix)[2], size = 1) # Sample an index from the columns
+    ran <- runif(1)                           # Generate random number so indices are picked in proper proportion
+    if ( matrix[row,col]/Max >= ran ) {       # Randomly choose indices in proportion to the dens
       count[i] <- T
       vectorPar1[i] <- row
       vectorPar2[i] <- col
