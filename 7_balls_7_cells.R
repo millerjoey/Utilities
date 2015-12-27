@@ -2,7 +2,7 @@
 # -------------------------------------------------------------------
 # n balls are distributed uniformly into n cells.
 # This function simulates a RV, X_j, the number of cells
-# containing exactly i balls
+# containing exactly j balls
 
 
 pmf <- function(j, nCells, repetitions) {
