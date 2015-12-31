@@ -9,7 +9,7 @@
 
 # Example posterior:
 posterior <- function(x) {
-  dnorm(x, mean = 0, sd = 1)        # Replace this line with desired distribution
+  dnorm(x, mean = 0, sd = 1)        # Replace this line with desired density
 }
 
 # Working code:
