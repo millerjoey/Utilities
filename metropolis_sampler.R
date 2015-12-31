@@ -18,9 +18,9 @@ proposalDelta <- function(nChains, sd) {
 
 metSample <- function(steps, nChains = 3, init, burnin = 100) {
   SD <- runif(n = nChains, 0, 0.5)  # Generate SD values to be used in iteration. Alternatively,
-                                  # uncomment the following deterministic code if efficiency 
-                                  # isn't good:
-                                  # SD <- seq(from = 0, to = 1, length.out = nChains)
+                                    # uncomment the following deterministic code if efficiency 
+                                    # isn't good:
+                                    # SD <- seq(from = 0, to = 1, length.out = nChains)
   MCMCarray <- array(dim=c(steps+burnin, nChains))            # Generate array with nChains columns
   if (length(init) == 1) {init <- rep(init, times = nChains)} # Use same initial value for all chains if desired
   if (length(init) != nChains) {stop("Please use a single starting value, or a vector with length(init)=nChains") }
