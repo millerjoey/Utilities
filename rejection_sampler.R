@@ -3,7 +3,7 @@
 # ranAlpha and ranBeta which are indices of the grid sampled randomly 
 # from the density. Parameter 1 corresponds to the rows of the matrix.
 # x (default 10) prints out every multiple of x between 1 and n so you 
-# check progress. Uncomment code to activate.
+# can check progress. Uncomment code to activate.
 # --------------------------------------------------------------------
 
 rejectionSample <- function(matrix, n, x=10) {
