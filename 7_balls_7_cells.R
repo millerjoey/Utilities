@@ -14,7 +14,7 @@ pmf <- function(j, nCells, repetitions) {
 # ... of a discrete uniform sequence of r.v. called "arrangement"
 # (arrangement[i] should be interpreted as the cell which ball i
 # lands in) ...
-    sample(1:n, size = n, replace = T) -> arrangement
+    arrangement <- sample(1:n, size = n, replace = T)
 # ... and increments through a table(repetitions), testing whether
 # any value of the discrete unif. r.v. has frequency j, and counts
 # them via (value[i] <- 1) and sum(value)
