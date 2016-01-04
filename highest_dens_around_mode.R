@@ -10,7 +10,7 @@
 # [1] Contains the following probability: 0.950257756719443                  
 # [1] 399 791
 
-interval.around.mode1D <- function(density, p) {
+interval.around.mode1D <- function(density, p=0.95) {
   sum <- 0
   i <- 1
   k <- 1
