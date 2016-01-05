@@ -26,8 +26,11 @@ interval.around.mode1D <- function(density, p=0.95) {
   
   while (sum < p) { # This starts at mode and expands left or right, depending on which has more mass
     sum <- sum(density[(index-i):(index+k)])
-    if (density[index-i] <= density[index+k]) {k <- k + 1}
-    else {i <- i + 1} 
+    if (density[index-i] <= density[index+k]) {
+      k <- k + 1
+    } else {
+      i <- i + 1
+    } 
   }
   print(c("Bounds of interval:", index-i, index+k), quote = F)
   print(c("Contains the following probability:", sum), quote = F)
