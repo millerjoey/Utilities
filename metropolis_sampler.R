@@ -4,7 +4,7 @@
 
 # This code demands a density that is defined everywhere that might 
 # be proposed. Use a density with infinite support or use an 
-# "if (!x in domain) {dens(x) = 0}" allowance in your posterior 
+# "if (!(x in domain)) {dens(x) = 0}" allowance in your posterior 
 # function's definition.
 
 # Example posterior:
