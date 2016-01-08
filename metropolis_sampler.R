@@ -1,11 +1,13 @@
 # MCMC Metropolis algorithm using a normal proposal distribution 
 # with various standard deviations.
-# Assumes an unnormalized univariate density "posterior(x)"
+# Assumes for generality an unnormalized univariate density "posterior(x)"
 
 # This code demands a density that is defined everywhere that might 
 # be proposed. Use a density with infinite support or use an 
 # "if (!(x in domain)) {dens(x) = 0}" allowance in your posterior 
 # function's definition.
+
+# TODO: Add adaptive phase for the proposal distribution to ensure a reasonable acceptance rate
 
 # Example posterior:
 posterior <- function(x) {
@@ -14,7 +16,7 @@ posterior <- function(x) {
 
 # Working code:
 proposalDelta <- function(nChains, sd) {
-  return(rnorm(nChains, mean = 0, sd))    # 
+  return(rnorm(nChains, mean = 0, sd))
 }
 
 metSample <- function(steps, nChains = 3, init, burnin = 100) {
