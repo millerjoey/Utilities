@@ -1,4 +1,4 @@
-# Rejection Sampling Function over a grid (class: matrix) of values
+# Simple Rejection Sampling function over a grid (class: matrix) of values
 # from a bivariate density. Creates data frame with n rows and cols 
 # ranAlpha and ranBeta which are indices of the grid sampled randomly 
 # from the density. Parameter 1 corresponds to the rows of the matrix.
@@ -17,7 +17,7 @@ rejectionSample <- function(matrix, n, x=10) {
     row <- sample(1:dim(matrix)[1], size = 1) # Sample an index from the rows
     col <- sample(1:dim(matrix)[2], size = 1) # Sample an index from the columns
     ran <- runif(1)                           # Generate random number so indices are picked in proper proportion
-    if ( matrix[row,col]/Max >= ran ) {       # Randomly choose indices in proportion to the dens
+    if ( matrix[row,col]/Max >= ran ) {       # Randomly choose indices in proportion to the dens of interest under a flat sampling dist of height = max(dens)
       count[i] <- T
       vectorPar1[i] <- row
       vectorPar2[i] <- col
