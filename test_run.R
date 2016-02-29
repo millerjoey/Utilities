@@ -1,3 +1,5 @@
+# Associated with "Naive Bayes.R", which implements a Naive Bayes algorithm on a bag of words model with ~ 
+
 # Use setwd() to set to the directory containing the data files and "Naive Bayes.R".
 # E.g.: setwd("/Users/macuser/Desktop/ML Code millerjs/")
 
