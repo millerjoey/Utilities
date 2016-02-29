@@ -1,4 +1,7 @@
-# Associated with "Naive Bayes.R", which implements a Naive Bayes algorithm on a bag of words model with ~ 
+# Associated with "Naive Bayes.R", which implements a Naive Bayes algorithm on a 
+# bag of words model with 5180 features and a training dataset of 1806 observations.
+# test/train_labels are the classifications corresponding to each entry. Data located:
+# http://rci.rutgers.edu/~pa336/HW1_data.zip
 
 # Use setwd() to set to the directory containing the data files and "Naive Bayes.R".
 # E.g.: setwd("/Users/macuser/Desktop/ML Code millerjs/")
