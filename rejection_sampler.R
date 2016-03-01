@@ -31,3 +31,7 @@ rejectionSample <- function(matrix, n, x=10) {
 }
 
 # TODO: add conditional sampling function, compare efficiencies for a few different densities.
+
+conditionalSample <- function(matrix, n) {
+
+}
