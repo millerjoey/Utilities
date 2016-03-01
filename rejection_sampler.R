@@ -1,9 +1,11 @@
-# Simple Rejection Sampling function over a grid (class: matrix) of values
-# from a bivariate density. Creates data frame with n rows and cols 
-# ranAlpha and ranBeta which are indices of the grid sampled randomly 
-# from the density. Parameter 1 corresponds to the rows of the matrix.
-# x (default 10) prints out every multiple of x between 1 and n so you 
-# can check progress. Uncomment code to activate.
+# A silly script if you already have computed all of the values, but
+# this is a simple  Rejection Sampling function over a grid (class: 
+# matrix) of values from a bivariate density. Creates data frame with 
+# n rows and cols ranAlpha and ranBeta which are indices of the grid 
+# sampled randomly from the density. Parameter 1 corresponds to the 
+# rows of the matrix. x (default 10) prints out every multiple of 
+# x between 1 and n so you can check progress. Uncomment code to 
+# activate.
 # --------------------------------------------------------------------
 
 rejectionSample <- function(matrix, n, x=10) {
@@ -27,3 +29,5 @@ rejectionSample <- function(matrix, n, x=10) {
   }
   return(cbind(vectorPar1, vectorPar2))
 }
+
+# TODO: add conditional sampling function, compare efficiencies for a few different densities.
