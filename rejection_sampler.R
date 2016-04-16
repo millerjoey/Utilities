@@ -30,6 +30,26 @@ rejectionSample <- function(matrix, n, x=10) {
   return(cbind(vectorPar1, vectorPar2))
 }
 
+# Another 1D rejection sampler:
+
+rejectionSampler <- function(n, option = 2000) {
+  samples <- NULL
+  total <- NULL
+  while (length(samples) < n) {
+    x <- runif(option) # wanted to vectorize to speed up. Use option of around 2x desired sample size for best efficiency.
+    y <- density(x)
+    c <- runif(option) # vectorized
+    samples <- c(samples,x[y/max > c])
+    total <- c(total, y/max>c)
+  }
+  print(paste("Acceptance Fraction is ", sum(total)/length(total)), quote = F)
+  return(samples[1:n])
+}
+
+
+
+
+
 # TODO: add conditional sampling function, compare efficiencies for a few different densities.
 
 conditionalSample <- function(matrix, n) {
